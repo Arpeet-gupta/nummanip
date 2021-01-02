@@ -1,10 +1,17 @@
 package calc
 
-//return sum of two integers
-func Add(numbers ...int) int {
+import "errors"
+
+// return sum of two integers with error
+func Add(numbers ...int) (error, int) {
 	sum := 0
-	for _, num := range numbers {
-		sum = sum + num
+
+	if len(numbers) < 2 {
+		return errors.New("Provide more than 2 numbers"), sum
+	} else {
+		for _, num := range numbers {
+			sum = sum + num
+		}
+		return nil, sum
 	}
-	return sum
 }
