@@ -23,7 +23,7 @@ func Multi(numbers ...int) (error, int) {
 		return errors.New("Provide more than 2 numbers"), multi
 	} else {
 		for _, num := range numbers {
-			multi = multi + num
+			multi = multi * num
 		}
 		return nil, multi
 	}
