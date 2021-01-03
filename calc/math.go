@@ -15,3 +15,16 @@ func Add(numbers ...int) (error, int) {
 		return nil, sum
 	}
 }
+
+func Multi(numbers ...int) (error, int) {
+	multi := 0
+
+	if len(numbers) < 2 {
+		return errors.New("Provide more than 2 numbers"), multi
+	} else {
+		for _, num := range numbers {
+			multi = multi + num
+		}
+		return nil, multi
+	}
+}
