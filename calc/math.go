@@ -30,6 +30,11 @@ func Multi(numbers ...int) (error, int) {
 }
 func Div(num1 int, num2 int) int {
 	div := 0
+	if (num2 == 0)
+	{
+		num2 = 1
+	} else{
 	div = num1 / num2
 	return div
+	}
 }
